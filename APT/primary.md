@@ -20,4 +20,7 @@
    * 几何方法：$P(A)=\frac{S_A}{S_\Omega}$
    * 主观方法：主观概率
 7. 概率的性质：
-   *
+   * 可加性：有限可加性；
+   * 单调性；
+   * 加法公式（抽屉原理）$\rightarrow$ 半可加性；
+   * 连续性：对于单调不减的事件序列$F_1 \subset F_2 \subset \cdots \subset F_n \subset \cdots$，称可列并$\cup_{n=1}^\infty F_n$为$\{F_n\}$的极限事件。对于单调不增的事件序列$E_1 \supset E_2 \supset \cdots \supset E_n \supset \cdots$，称可列并$\cap_{n=1}^\infty E_n$为$\{E_n\}$的极限事件。
