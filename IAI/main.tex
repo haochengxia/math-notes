@@ -1,0 +1,124 @@
+% 使用中文书籍文档类
+\documentclass[12pt,oneside]{ctexbook}
+
+%==============================================================================
+% Preamble.
+%==============================================================================
+
+% Correctly showing characters outside ASCII.
+\usepackage[T1]{fontenc}
+% File is written and read with utf8 encoding.
+\usepackage[utf8]{inputenc}
+% Set paging layout.
+\usepackage[margin=1.2in]{geometry}
+% Including `amsfonts'.  Must be loaded before `mathtools'.
+\usepackage{amssymb}
+% Including `amsmath' and fixing bugs for `amsmath'.
+\usepackage{mathtools}
+% Must be loaded after `amsmath' and `mathtools'.
+\usepackage{amsthm}
+% Automatically adjust character spacing at margins.
+\usepackage{microtype}
+% Provide further utilities and fix bugs for `enumerate', `itemize' and
+% `description'.
+\usepackage{enumitem}
+% Provide better quoting environment.
+\usepackage{dirtytalk}
+% Parsing list inside `\newcommand'.
+\usepackage{listofitems}
+% Nice looking if-then-else structure with comparison functionality.
+\usepackage{ifthen}
+% Automatically add hyperlinks to labels/refs.  Must be loaded after all
+% packages above and before `cleveref'.  Recommend to use with `natbib' when
+% you need bibtex.
+\usepackage{hyperref}
+
+\hypersetup{         % This macro come with `hyperref'.
+	colorlinks=true, % Color hyperlinks.
+	linkcolor=blue,  % Color local hyperlinks with blue.
+	urlcolor=cyan,   % Color url links with cyan.
+}
+
+%------------------------------------------------------------------------------
+% Define environments.
+%------------------------------------------------------------------------------
+
+% Text inside the body of theorem-like environments are set to Roman font.
+% theorem-like environments share their counters, counters follow section and
+% reset in every sections (except for axioms, axioms counters are reset in each
+% chapter).  Exercises has their owned counter.  Notes do not use counter.
+% See `amsthm' for details.
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}[chapter]
+\newtheorem{additional corollary}{Additional Corollary}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{note}{Note}
+
+\theoremstyle{remark}
+\newtheorem*{meta-proof}{Meta-proof}
+
+% In `enumerate' enviroments, items' label are alphabets and surrounded by
+% parentheses.  See `enumitem' for details.
+\renewcommand{\labelenumi}{\textnormal{(}\alph{enumi}\textnormal{)}}
+
+% Formatting exercises section.
+\newcommand{\exercisesection}{
+    \begin{center}
+        --- Exercises ---
+    \end{center}
+}
+
+%------------------------------------------------------------------------------
+% Define operators and symbols.
+%------------------------------------------------------------------------------
+
+% Absolute value.
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+% Ceiling.
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+% Floor.
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+%==============================================================================
+% Document.
+%==============================================================================
+
+\begin{document}
+
+%------------------------------------------------------------------------------
+% Front matters.
+%------------------------------------------------------------------------------
+
+\frontmatter
+
+% Author informations.
+\title{无穷分析引论笔记}
+\author{Haocheng Xia}
+\maketitle
+
+% Table of contents.
+\tableofcontents{}
+
+%------------------------------------------------------------------------------
+% Main matters.
+%------------------------------------------------------------------------------
+
+\mainmatter
+
+% All chapters are in separated files.  We include them here.
+\input{volume1.tex}
+
+%------------------------------------------------------------------------------
+% Back matters.
+%------------------------------------------------------------------------------
+
+\backmatter
+
+\end{document}

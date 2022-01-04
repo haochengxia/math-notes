@@ -1,0 +1,81 @@
+\chapter{函数}\label{ch 1}
+
+\begin{note}
+    在分析中，a，b，c等代表常量，x，y，z等代表变量。确定的量（常量）都只可以是一个数，而变量包含每一个确定的量。指定变量为某个确定的值，它就成了常量。
+    变量包容着正数和负数、整数和分数、有理数和超越数、零和虚数等一切数。
+    
+    变量的函数是变量、常量和数用某种方式联合在一起的解析表达式。只含一个变量$z$，其余均为常量的表达式为$z$的函数，
+    \begin{equation*}
+        a + 3z, az - 4z^2, az+b \sqrt{a^2 - z^2}, z^2
+    \end{equation*}
+    
+    变量的函数本身也是一个变量。变量可以取虚数值，因为函数也可以去任何值。例如$\sqrt{9 - z^2}$。存在样子像函数的常量，
+    \begin{equation*}
+        z^0, 1^z, \frac{a^2 - az}{a - z}
+    \end{equation*}
+    
+    函数之间的基本区别是变量和常量的联合方式，联合方式决定于运算。运算包括代数运算，即加、减、乘、除、乘方、开方和解方程；超越运算，即指数运算，对数运算以及积分学提供的运算。下面对包含多于一种运算的表达式加以分类。函数分为\textbf{代数函数}和\textbf{超越函数}。代数函数只含有代数运算，超越函数含有超越运算。代数函数常常不能显式表出。例如$z$的函数$Z$，
+    \begin{equation*}
+        Z^5 = az^2Z^3 - bz^4Z^2 + cz^3Z - 1
+    \end{equation*}
+    
+    代数函数又分为有理函数和无理函数。有理函数的变量不受根号作用，无理函数反之。有理函数仅含加、减、乘、除和整数次乘方运算，
+    \begin{equation*}
+        a + z, a - z, az, \frac{a^2 + z^2}{a + z}, az^3 - bz^5
+    \end{equation*}
+    
+    而无理函数形如，
+    \begin{equation*}
+        a + \sqrt{a^2 - z^2}, (a - 2z + z^2)^{\frac{1}{3}}, \frac{a^2 - z\sqrt{a^2 + z^2}}{a + z}
+    \end{equation*}
+    
+    无理函数分为显式的和隐式的。显式如上，而\textbf{隐式无理函数}是从方程中产生的，例如，
+    \begin{equation*}
+        Z^7 = azZ^2 - bz^5
+    \end{equation*}
+    
+    而有理函数可以进一步被分为整函数和分数函数。整函数分母中不含$z$且变量$z$的指数为非负整数，形如，
+    \begin{equation*}
+        a + bz + cz^2 + dz^3 + ez^4 + fz^5 + \cdots
+    \end{equation*}
+    而分数函数形如，
+    \begin{equation*}
+        \frac{a + bz + cz^2 + dz^3 + ez^4 + fz^5 + \cdots}{\alpha + \beta z + \gamma z^2 + \delta z^3 + \epsilon z^4 + \zeta z^5 + \cdots}
+    \end{equation*}
+    
+    还可以从另一个角度考虑函数的分类，即从变量$z$的每一个值能够得到一个确定的函数值。若只得到一个确定的函数值，则为单值函数。有理函数中的整函数和分数函数都是单值函数。而无理函数则是多值的，例如根号会给出两个值。超越函数有单值、多值和无穷多值的。例如弦函数有无穷多值。
+    \begin{equation*}
+        chord(\theta) = \sqrt{(1 - cos(\theta))^2 + sin^2(\theta)} = z \iff chord^{-1}(z) = \theta
+    \end{equation*}
+    
+    用$P, Q, R, S, T$等表示$z$的单值函数。
+    
+    可以递归地用方程来定义$n$值函数。
+    \begin{equation*}
+        Z^n - PZ^{n-1} + QZ^{n-2} - RZ^{n-3} + SZ^{n-4} - \cdots = 0
+    \end{equation*}
+    这样$Z$就是$z$的$n$值函数。其对应的$n$个值中虚数的值必为偶数个。$n$值之和等于$P$，积等于$Q$，两个两个（组合）之积的和等于$Q$，以此类推。（如$3$值函数对应值$a, b, c$，$ab + ac + bc = Q$且$abc = R$）
+    
+    如果$z$的多值函数$Z$恒有且仅有一个实数值，那么$Z$可以被视作单值函数，如$p^{1/3}, p{1/5}$。形如$P^{\frac{m}{n}}$的函数，$n$为奇数则可当作单值，反之有0个或2个实根。（$\frac{m}{n}$为最简形式）
+    
+    $y$是$z$的函数 $\iff$ $z$是$y$的函数。若$x$和$y$是$z$的函数，则若$x$和$y$互为函数。下面考虑一些特殊函数：
+    \begin{itemize}
+        \item 偶函数：$z$取$\pm k$时值相等的函数；偶函数又可分为单值偶函数和多值偶函数，即其多个值都相等。值得注意的是$z$的次数必为偶数，因此可定义偶函数为$z^2$的函数。
+        \item 奇函数：把$z$变为$-z$后，函数值变号的即为奇函数；$z$的偶函数乘上$z$的奇函数，积为上$z$的奇函数；两个奇函数相乘或相除，得到偶函数；若$y$是$z$的奇函数，则$z$是$y$的奇函数；如果确定$y$为$z$的函数的方程中，各项中$y$和$z$的指数之和同偶或同奇，则$y$为$z$的奇函数。
+        \item 相似函数：$Y$与$y$之间的函数关系同于$Z$与$z$之间的函数关系，则$Y$和$Z$是相似函数。
+    \end{itemize}
+    
+\end{note}
+
+% \begin{note}\label{circularity}
+%     \emph{circularity}: using an advanced fact to prove a more elementary fact, and then later using the elementary fact to prove the advanced fact.
+%     When do a mathematics proofs, one should avoid \emph{circularity}.
+% \end{note}
+
+% \begin{note}
+%     From a logical point of view, there is no difference between a lemma, proposition, theorem, or corollary - they are all claims waiting to be proved.
+%     However, we use these terms to suggest different levels of importance and difficulty.
+%     A lemma is an easily proved claim which is helpful for proving other propositions and theorems, but is usually not particularly interesting in its own right.
+%     A proposition is a statement which is interesting in its own right, while a theorem is a more important statement than a proposition which says something definitive on the subject, and often takes more effort to prove than a proposition or lemma.
+%     A corollary is a quick consequence of a proposition or theorem that was proven recently.
+% \end{note}
